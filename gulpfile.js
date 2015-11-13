@@ -19,14 +19,14 @@ gulp.task('nodemon', function() {
 
 gulp.task('build', function() {
   gulp.src([
-    'app/public/javascripts/app.js',
-    'app/public/javascripts/**/*.module.js',
-    'app/public/javascripts/**/**/*.module.js',
-    'app/public/javascripts/**/*.directive.js',
-    'app/public/javascripts/**/**/*.directive.js'
-  ])
-  .pipe(concat('app.min.js'))
-  .pipe(gulp.dest('app/public'));
+      'app/public/javascripts/app.js',
+      'app/public/javascripts/**/*.module.js',
+      'app/public/javascripts/**/**/*.module.js',
+      'app/public/javascripts/**/*.directive.js',
+      'app/public/javascripts/**/**/*.directive.js'
+    ])
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest('app/public'));
 })
 
 gulp.task('less', function() {

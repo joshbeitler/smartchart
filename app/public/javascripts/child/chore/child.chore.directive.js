@@ -21,7 +21,7 @@
     // This needs to be done with a constant
     var ref = new Firebase('https://cranium.firebaseio.com/');
     var chore = this;
-    var chore.id = $attrs.id ? $attrs.id : 0;
+    chore.id = $attrs.id;
 
     $(document).ready(function() {
       $.map($('.chore'), function(i) {

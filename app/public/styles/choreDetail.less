@@ -1,0 +1,77 @@
+#choreDetail {
+  background-color: #CDDC39; //todo: change this to be dynamic
+  color: #fff;
+  font-family: 'proxima-nova-soft';
+  font-weight: 500;
+  height: 100vh;
+
+  .choreName {
+    font-size: 2em;
+    padding-top: 100px;
+    margin-bottom: 100px;
+
+    span {
+      font-size: 1.4em;
+    }
+  }
+
+  .details {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    margin-bottom: 100px;
+    color: rgba(0,0,0,0.8);
+    text-align: center;
+    font-size: 2em;
+  }
+
+  .wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .points {
+    background-image: url("/images/choreIcons/Points.svg");
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: rgba(0,0,0,0.8);
+    float: right;
+    margin-top: -30px;
+    font-weight: 700;
+  }
+
+  .buttons {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .button {
+    background-color: #fff;
+    display: inline-block;
+    width: 40%;
+    margin-right: 50px;
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 2px;
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    md-icon {
+      font-size: 2em;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .ok md-icon {
+    color: #4CAF50;
+  }
+
+  .nope md-icon {
+    color: #f44336;
+  }
+}
