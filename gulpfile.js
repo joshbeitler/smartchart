@@ -45,7 +45,7 @@ gulp.task('browser-sync', ['nodemon', 'less'], function() {
   });
 });
 
-gulp.task('default', ['browser-sync'], function() {
+gulp.task('default', ['build', 'browser-sync'], function() {
   gulp.watch(['app/public/javascripts/**/*.html'], reload);
   gulp.watch(['app/public/views/*.ejs'], reload);
   gulp.watch(['app/public/styles/*.less'], ['less']);
