@@ -23,6 +23,7 @@
   <script src="vendor/angular-animate/angular-animate.js"></script>
   <script src="vendor/angular-aria/angular-aria.js"></script>
   <script src="vendor/angular-material/angular-material.js"></script>
+  <script src="vendor/jquery/dist/jquery.min.js"></script>
 
   <!-- Google Authentication Scripts -->
   <script src="javascripts/auth/google/auth.google.module.js"></script>
@@ -53,7 +54,7 @@
   <link rel="stylesheet" href="styles/build/app.css">
 </head>
 <body>
-  <md-toolbar>
+  <md-toolbar ng-show="vm.authed">
     <div class="md-toolbar-tools">
       <md-button class="md-icon-button" ng-show="vm.authed" aria-label="Settings">
         <md-icon>menu</md-icon>
@@ -108,7 +109,7 @@
       </div>
     </div>
   </md-toolbar>
-  <div layout="column" layout-padding>
+  <div layout="column" layout>
     <div ui-view>
     </div>
   </div>
