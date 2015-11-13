@@ -1,7 +1,7 @@
 (function() {
   'use strict';
 
-  var app = angular.module('myApp', [
+  var app = angular.module('parent', [
     'ui.router',
     'firebase',
     'auth',
@@ -19,16 +19,26 @@
 
   app.config(function($stateProvider, $urlRouterProvider) {
     // TODO: replace this with /dash if logged in
-    $urlRouterProvider.otherwise('/auth/login');
+    $urlRouterProvider.otherwise('admin/auth/login');
 
     $stateProvider.state('loginState', {
-      url: "/auth/login",
+      url: "admin/auth/login",
       templateUrl: "/views/login.ejs"
     });
 
     $stateProvider.state('homeState', {
-      url: "/dash",
+      url: "admin/dash",
       templateUrl: "/views/home.ejs"
     });
+
+    $stateProvider.state('scheduleState', {
+      url: "admin/schedule",
+      templateUrl: '/views/schedule.ejs'
+    })
+
+    $stateProvider.state('storeState', {
+      url: "admin/edit/store",
+      templateUrl: '/views/editStore.ejs'
+    })
   });
 })();
