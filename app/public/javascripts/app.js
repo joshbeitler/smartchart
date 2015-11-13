@@ -31,6 +31,13 @@
       templateUrl: "/views/home.ejs"
     });
 
+    $stateProvider.state('scheduleState', {
+      url: "/dash/schedule",
+      templateUrl: "/views/schedule.ejs"
+    });
+
+    //
+
     $stateProvider.state('detailState', {
       url: "/app/chores/{id}",
       templateUrl: "/views/choreDetail.ejs",

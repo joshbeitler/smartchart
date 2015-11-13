@@ -63,12 +63,14 @@
             <img ng-src="{{vm.user.google.profileImageURL}}" alt="" class="avatar">
           </md-button>
           <md-menu-content>
-            <md-menu-item>
-              <md-button>
-                <md-icon>event</md-icon>
-                Manage Schedule
-              </md-button>
-            </md-menu-item>
+            <a ui-sref="scheduleState">
+              <md-menu-item>
+                <md-button>
+                  <md-icon>event</md-icon>
+                  Manage Schedule
+                </md-button>
+              </md-menu-item>
+            </a>
             <md-divider></md-divider>
             <md-menu-item>
               <md-button>
