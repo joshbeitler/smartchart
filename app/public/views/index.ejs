@@ -27,6 +27,12 @@
   <!-- Facebook Authentication Scripts -->
   <script src="javascripts/auth/facebook/auth.facebook.module.js"></script>
   <script src="javascripts/auth/facebook/auth.facebook.directive.js"></script>
+
+  <!-- Chore Scripts -->
+  <script src="javascripts/child/chore/child.chore.module.js"></script>
+  <script src="javascripts/child/chore/child.chore.directive.js"></script>
+  <script src="javascripts/child/child.module.js"></script>
+
   <!-- Main Authentication Script -->
   <script src="javascripts/auth/auth.module.js"></script>
 
@@ -48,7 +54,7 @@
       <md-button class="md-icon-button" ng-show="vm.authed" aria-label="Settings">
         <md-icon>menu</md-icon>
       </md-button>
-      <span><a ui-sref="homeState">My App</a></span>
+      <span><a ui-sref="homeState">Smartchart</a></span>
       <span flex></span>
       <md-button class="md-icon-button" ng-show="vm.authed">
         <md-icon>event</md-icon>
@@ -57,24 +63,43 @@
       <sp-google ng-hide="true"></sp-google>
       <div class="googleButton" id="googleLogout" ng-show="vm.authed">
         <md-menu>
-         <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
-           <img ng-src="{{vm.user.google.profileImageURL}}" alt="" class="avatar">
-         </md-button>
-         <md-menu-content>
-           <md-menu-item>
-             <md-button>
-               <md-icon>settings</md-icon>
-               Settings
-             </md-button>
-           </md-menu-item>
-           <md-divider></md-divider>
-           <md-menu-item>
-             <md-button ng-click="vm.google.logout()">
-               <md-icon>exit_to_app</md-icon>
-               Logout
-             </md-button>
-           </md-menu-item>
-         </md-menu-content>
+          <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+            <img ng-src="{{vm.user.google.profileImageURL}}" alt="" class="avatar">
+          </md-button>
+          <md-menu-content>
+            <md-menu-item>
+              <md-button>
+                <md-icon>event</md-icon>
+                Manage Schedule
+              </md-button>
+            </md-menu-item>
+            <md-divider></md-divider>
+            <md-menu-item>
+              <md-button>
+                <md-icon>star</md-icon>
+                Add Reward
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button>
+                <md-icon>add</md-icon>
+                Add Chore
+              </md-button>
+            </md-menu-item>
+            <md-divider></md-divider>
+            <md-menu-item>
+              <md-button>
+                <md-icon>settings</md-icon>
+                Settings
+              </md-button>
+            </md-menu-item>
+            <md-menu-item>
+              <md-button ng-click="vm.google.logout()">
+                <md-icon>exit_to_app</md-icon>
+                Logout
+              </md-button>
+            </md-menu-item>
+          </md-menu-content>
         </md-menu>
       </div>
     </div>
