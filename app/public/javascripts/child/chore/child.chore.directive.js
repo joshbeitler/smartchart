@@ -22,6 +22,9 @@
     var ref = new Firebase('https://cranium.firebaseio.com/');
     var chore = this;
     chore.id = $attrs.id;
+    chore.go = function() {
+      console.log('hai');
+    }
 
     var colors = [
       '#B2DFDB',

@@ -7,6 +7,7 @@
     'ngMaterial',
     'ngAnimate',
     'ngAria',
+    'anim-in-out',
 
     // Add app-specific directives here
     'notifications',
