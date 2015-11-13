@@ -1,0 +1,84 @@
+<html ng-app="myApp">
+<head>
+  <title><%= title %></title>
+
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+
+  <!-- 3rd pary CSS -->
+  <link rel="stylesheet" href="vendor/angular-material/angular-material.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+  <!-- Bower Scripts -->
+  <script src="vendor/angular/angular.min.js"></script>
+  <script src="vendor/angular-ui-router/release/angular-ui-router.min.js"></script>
+  <script src="vendor/firebase/firebase.js"></script>
+  <script src="vendor/angularfire/dist/angularfire.min.js"></script>
+  <script src="vendor/angular-animate/angular-animate.js"></script>
+  <script src="vendor/angular-aria/angular-aria.js"></script>
+  <script src="vendor/angular-material/angular-material.js"></script>
+
+  <!-- Google Authentication Scripts -->
+  <script src="javascripts/auth/google/auth.google.module.js"></script>
+  <script src="javascripts/auth/google/auth.google.directive.js"></script>
+
+  <!-- Facebook Authentication Scripts -->
+  <script src="javascripts/auth/facebook/auth.facebook.module.js"></script>
+  <script src="javascripts/auth/facebook/auth.facebook.directive.js"></script>
+  <!-- Main Authentication Script -->
+  <script src="javascripts/auth/auth.module.js"></script>
+
+  <!-- sp-notification -->
+  <script src="javascripts/notifications/notifications.module.js"></script>
+  <script src="javascripts/notifications/notifications.directive.js"></script>
+
+  <!-- App Script -->
+  <script src="javascripts/app.js"></script>
+
+  <base href="/">
+
+  <!-- App stylesheet -->
+  <link rel="stylesheet" href="styles/build/app.css">
+</head>
+<body>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <md-button class="md-icon-button" ng-show="vm.authed" aria-label="Settings">
+        <md-icon>menu</md-icon>
+      </md-button>
+      <span><a ui-sref="homeState">My App</a></span>
+      <span flex></span>
+      <sp-notifications ng-show="vm.authed"></sp-notifications>
+      <sp-google ng-hide="true"></sp-google>
+      <div class="googleButton" id="googleLogout" ng-show="vm.authed">
+        <md-menu>
+         <md-button ng-click="$mdOpenMenu($event)" class="md-icon-button" aria-label="Open sample menu">
+           <img ng-src="{{vm.user.google.profileImageURL}}" alt="" class="avatar">
+         </md-button>
+         <md-menu-content>
+           <md-menu-item>
+             <md-button>
+               <md-icon>settings</md-icon>
+               Settings
+             </md-button>
+           </md-menu-item>
+           <md-divider></md-divider>
+           <md-menu-item>
+             <md-button ng-click="vm.google.logout()">
+               <md-icon>exit_to_app</md-icon>
+               Logout
+             </md-button>
+           </md-menu-item>
+         </md-menu-content>
+        </md-menu>
+      </div>
+    </div>
+  </md-toolbar>
+  <div layout="column" layout-padding>
+    <div ui-view>
+    </div>
+  </div>
+</body>
+</html>
