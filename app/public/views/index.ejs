@@ -3,6 +3,7 @@
   <title><%= title %></title>
 
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes" />
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/images/favicon.png">
@@ -14,6 +15,14 @@
   <!-- Typekit for child-side -->
   <script src="https://use.typekit.net/vcj6fgg.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+  <script>
+    $(document).ready(function() {
+      document.addEventListener('touchmove', function(event) {
+        event.preventDefault();
+      }, false);
+    });
+  </script>
 
   <!-- Bower Scripts -->
   <script src="vendor/angular/angular.min.js"></script>
