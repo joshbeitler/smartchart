@@ -20,7 +20,8 @@
   function ChoreController($attrs, $timeout, $scope, $state) {
     // This needs to be done with a constant
     var ref = new Firebase('https://cranium.firebaseio.com/');
-    var vm = this;
+    var chore = this;
+    chore.id = $attrs.id;
 
     $(document).ready(function() {
       $.map($('.chore'), function(i) {
