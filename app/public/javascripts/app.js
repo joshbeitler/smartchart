@@ -19,9 +19,6 @@
   });
 
   app.config(function($stateProvider, $urlRouterProvider) {
-    // TODO: replace this with /dash if logged in
-    $urlRouterProvider.otherwise('/auth/login');
-
     $stateProvider.state('loginState', {
       url: "/auth/login",
       templateUrl: "/views/login.ejs"
@@ -32,9 +29,19 @@
       templateUrl: "/views/home.ejs"
     });
 
+    $stateProvider.state('detailState', {
+      url: "/app/chores/{id}",
+      templateUrl: "/views/choreDetail.ejs",
+      controller: function($stateParams) {
+        console.log($stateParams);
+      }
+    });
+
     $stateProvider.state('appState', {
       url: "/app",
       templateUrl: "/views/app.ejs"
     });
+
+    $urlRouterProvider.otherwise('/auth/login');
   });
 })();
