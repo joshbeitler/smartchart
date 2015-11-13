@@ -22,7 +22,7 @@
 
   function GoogleController($attrs, $timeout, $scope, $state, $mdToast) {
     // This needs to be done with a constant
-    var ref = new Firebase('https://sparktesting.firebaseio.com/');
+    var ref = new Firebase('https://cranium.firebaseio.com/');
 
     var vm = this;
     vm.google = {};
