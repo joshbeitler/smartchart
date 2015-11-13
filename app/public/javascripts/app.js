@@ -32,9 +32,7 @@
     $stateProvider.state('detailState', {
       url: "/app/chores/{id}",
       templateUrl: "/views/choreDetail.ejs",
-      controller: function($stateParams) {
-        console.log($stateParams);
-      }
+      controller: function($stateParams) {}
     });
 
     $stateProvider.state('appState', {

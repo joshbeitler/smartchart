@@ -37,8 +37,9 @@
     $(document).ready(function() {
       $.map($('.chore'), function(i) {
         $(i).height($(i).width());
-        $(i).css('background-color', colors[Math.floor(Math.random() *
-          colors.length)]);
+        var color = colors[Math.floor(Math.random() *
+          colors.length)];
+        $(i).css('background-color', color);
       });
     });
   }
