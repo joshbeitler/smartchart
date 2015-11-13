@@ -11,7 +11,8 @@
     // Add app-specific directives here
     'notifications',
     'auth',
-    'child'
+    'child',
+    'dash'
   ]).config(function($mdThemingProvider, $locationProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
