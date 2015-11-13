@@ -37,6 +37,14 @@ sc-reward {
   margin-right: 25px;
   margin-left: 25px;
   margin-bottom: 25px;
+  transition: all .1s ease-in-out;
+
+  &:focus,
+  &:active,
+  &:hover {
+    background-color: #ECEFF1 !important;
+    color: rgba(0,0,0,0.6);
+  }
 
   .BoxShadowHelper(@level: 1);
 

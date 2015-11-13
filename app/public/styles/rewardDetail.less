@@ -101,6 +101,15 @@
     text-align: center;
     padding: 50px 0;
     border-radius: 2px;
+    transition: all .1s ease-in-out;
+
+    &:focus,
+    &:active,
+    &:hover {
+      background-color: #ECEFF1 !important;
+      color: rgba(0,0,0,0.6);
+    }
+    
     .BoxShadowHelper(@level: 2);
 
     &:last-child {
