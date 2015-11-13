@@ -8,6 +8,7 @@
     'ngAnimate',
     'ngAria',
     'anim-in-out',
+    'angularRipple',
 
     // Add app-specific directives here
     'notifications',
@@ -33,7 +34,17 @@
     $stateProvider.state('detailState', {
       url: "/app/chores/{id}",
       templateUrl: "/views/choreDetail.ejs",
-      controller: function($stateParams) {}
+      controller: function($scope) {
+        $scope.$on('$viewContentLoaded', function(event) {
+          var color = localStorage.getItem('color');
+          $('#choreDetail').css('background-color', color);
+        });
+      }
+    });
+
+    $stateProvider.state('storeState', {
+      url: "/app/store",
+      templateUrl: "/views/store.ejs"
     });
 
     $stateProvider.state('appState', {
