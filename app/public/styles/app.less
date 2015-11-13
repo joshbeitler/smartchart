@@ -108,7 +108,6 @@ md-toolbar {
 
       &.pink {
         background-color: #F06292;
-
         box-shadow: 0 4px 8px -2px rgba(0,0,0,0.48);
       }
 
@@ -129,6 +128,8 @@ md-toolbar {
       border-radius: 50%;
       vertical-align: middle;
       margin-right: 10px;
+
+      .BoxShadowHelper(@level: 1);
     }
 
     header > .meta {
