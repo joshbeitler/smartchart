@@ -45,11 +45,9 @@
             if ($(this).scrollTop() > 100) {
               $(this).parent().find("header").addClass(
                 "shrink");
-              // updateSliderMargin();
             } else {
               $(this).parent().find("header").removeClass(
                 "shrink");
-              // updateSliderMargin();
             }
           });
         });
