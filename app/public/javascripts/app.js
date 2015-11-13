@@ -42,6 +42,17 @@
       }
     });
 
+    $stateProvider.state('rewardState', {
+      url: "/app/rewards/{id}",
+      templateUrl: "/views/rewardDetail.ejs",
+      controller: function($scope) {
+        $scope.$on('$viewContentLoaded', function(event) {
+          var color = localStorage.getItem('color');
+          $('#rewardDetail').css('background-color', color);
+        });
+      }
+    });
+
     $stateProvider.state('storeState', {
       url: "/app/store",
       templateUrl: "/views/store.ejs"
