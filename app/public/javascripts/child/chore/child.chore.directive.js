@@ -21,5 +21,11 @@
     // This needs to be done with a constant
     var ref = new Firebase('https://cranium.firebaseio.com/');
     var vm = this;
+
+    $(document).ready(function() {
+      $.map($('.chore'), function(i) {
+        $(i).height($(i).width());
+      });
+    });
   }
 })();

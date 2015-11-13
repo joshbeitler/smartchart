@@ -31,5 +31,10 @@
       url: "/dash",
       templateUrl: "/views/home.ejs"
     });
+
+    $stateProvider.state('appState', {
+      url: "/app",
+      templateUrl: "/views/app.ejs"
+    });
   });
 })();
