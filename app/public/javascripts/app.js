@@ -38,7 +38,22 @@
 
     $stateProvider.state('appState', {
       url: "/app",
-      templateUrl: "/views/app.ejs"
+      templateUrl: "/views/app.ejs",
+      controller: function($scope) {
+        $scope.$on('$viewContentLoaded', function(event) {
+          $('.chores').on("scroll", function() {
+            if ($(this).scrollTop() > 100) {
+              $(this).parent().find("header").addClass(
+                "shrink");
+              // updateSliderMargin();
+            } else {
+              $(this).parent().find("header").removeClass(
+                "shrink");
+              // updateSliderMargin();
+            }
+          });
+        });
+      }
     });
 
     $urlRouterProvider.otherwise('/auth/login');
