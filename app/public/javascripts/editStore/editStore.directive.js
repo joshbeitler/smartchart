@@ -1,4 +1,4 @@
-(function(){
+(function() {
   'use strict';
 
   angular
@@ -12,27 +12,27 @@
       }
     });
 
-    EditStoreController.$inject = ['$firebaseArray', '$scope'];
+  EditStoreController.$inject = ['$firebaseArray', '$scope'];
 
-    function EditStoreController($firebaseArray, $scope) {
-      var ref = new Firebase('https://cranium.firebaseio.com');
-      var user = ref.getAuth();
-      var rewardsRef = ref.child(user.google.id).child('rewards');
-      var editStore = this;
+  function EditStoreController($firebaseArray, $scope) {
+    var ref = new Firebase('https://cranium.firebaseio.com');
+    var user = ref.getAuth();
+    var rewardsRef = ref.child(user.google.id).child('rewards');
+    var editStore = this;
 
-      editStore.rewards = $firebaseArray(rewardsRef);
-      editStore.addReward = addReward;
+    editStore.rewards = $firebaseArray(rewardsRef);
+    editStore.addReward = addReward;
 
-      function addReward() {
-        editStore.rewards.$add({
-          name: $scope.rewardName,
-          points: $scope.rewardPoints,
-          id: editStore.rewards.length,
-          icon: ''
-        }).then(function() {
-          $scope.rewardName = '';
-          $scope.rewardPoints = '';
-        });
-      }
+    function addReward() {
+      editStore.rewards.$add({
+        name: $scope.rewardName,
+        points: $scope.rewardPoints,
+        id: editStore.rewards.length,
+        icon: '/images/rewardIcons/videoGames.svg'
+      }).then(function() {
+        $scope.rewardName = '';
+        $scope.rewardPoints = '';
+      });
     }
+  }
 })();
