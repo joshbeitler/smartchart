@@ -1,11 +1,13 @@
 <span ng-repeat="child in data.children">
   <div class="column"> <!-- todo: alt -->
-    <header data-size="big" ng-style="{'background-color':child.color}">
-      <img ng-src="{{child.picture}}" alt="" />
-      <div class="meta">
-        {{child.name}}
-      </div>
-    </header>
+    <a ui-sref="storeState">
+      <header data-size="big" ng-style="{'background-color':child.color}">
+        <img ng-src="{{child.picture}}" alt="" />
+        <div class="meta">
+          {{child.name}}
+        </div>
+      </header>
+    </a>
     <div class="chores">
       <span ng-repeat="assigned in child.assigned">
         <span ng-repeat="chore in data.chores">
