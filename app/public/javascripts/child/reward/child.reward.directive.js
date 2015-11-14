@@ -1,27 +1,26 @@
 (function() {
   angular
-    .module('child.chore')
-    .directive('scChore', function() {
+    .module('child.reward')
+    .directive('scReward', function() {
       return {
         bindToController: true,
-        controller: ChoreController,
-        controllerAs: 'chore',
-        templateUrl: './javascripts/child/chore/child.chore.html'
+        controller: RewardController,
+        controllerAs: 'reward',
+        templateUrl: './javascripts/child/reward/child.reward.html'
       };
     });
 
-  ChoreController.$inject = [
+  RewardController.$inject = [
     '$attrs',
     '$timeout',
     '$scope',
     '$state'
   ];
 
-  function ChoreController($attrs, $timeout, $scope, $state) {
+  function RewardController($attrs, $timeout, $scope, $state) {
     // This needs to be done with a constant
     var ref = new Firebase('https://cranium.firebaseio.com/');
-    var chore = this;
-    chore.id = $attrs.id;
+    var reward = this;
 
     var colors = [
       '#B2DFDB',
@@ -35,7 +34,7 @@
     ];
 
     $(document).ready(function() {
-      $.map($('.chore'), function(i) {
+      $.map($('.reward'), function(i) {
         $(i).height($(i).width());
         var color = colors[Math.floor(Math.random() *
           colors.length)];

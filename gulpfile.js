@@ -4,7 +4,8 @@ var gulp = require('gulp'),
   path = require('path'),
   browserSync = require('browser-sync'),
   babel = require('gulp-babel'),
-  reload = browserSync.reload;
+  reload = browserSync.reload,
+  concat = require('gulp-concat');
 
 gulp.task('nodemon', function() {
   nodemon({
@@ -15,6 +16,18 @@ gulp.task('nodemon', function() {
     }
   });
 });
+
+gulp.task('build', function() {
+  gulp.src([
+      'app/public/javascripts/app.js',
+      'app/public/javascripts/**/*.module.js',
+      'app/public/javascripts/**/**/*.module.js',
+      'app/public/javascripts/**/*.directive.js',
+      'app/public/javascripts/**/**/*.directive.js'
+    ])
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest('app/public'));
+})
 
 gulp.task('less', function() {
   return gulp.src('app/public/styles/**/*.less')
@@ -32,7 +45,7 @@ gulp.task('browser-sync', ['nodemon', 'less'], function() {
   });
 });
 
-gulp.task('default', ['browser-sync'], function() {
+gulp.task('default', ['build', 'browser-sync'], function() {
   gulp.watch(['app/public/javascripts/**/*.html'], reload);
   gulp.watch(['app/public/views/*.ejs'], reload);
   gulp.watch(['app/public/styles/*.less'], ['less']);

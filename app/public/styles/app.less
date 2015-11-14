@@ -1,9 +1,53 @@
 @import "color";
 @import "auth";
 @import "chore";
+@import "choreDetail";
+@import "store";
+@import "reward";
+@import "rewardDetail";
+
+.BoxShadowHelper(@level: 1) {
+  & when (@level = 1) {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  & when (@level = 2) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  & when (@level = 3) {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  & when (@level = 4) {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  & when (@level = 5) {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+}
+
+[angular-ripple] {
+  position: relative;
+  overflow: hidden;
+}
+.angular-ripple {
+  display: block;
+  position: absolute;
+  background-color: rgba(0,0,0,0.1);
+  border-radius: 50%;
+  transform: scale(0);
+}
+.angular-ripple.animate {
+  animation: ripple 0.35s linear;
+}
+@keyframes ripple {
+  100% {
+    opacity: 0;
+    transform: scale(2.5);
+  }
+}
 
 body {
   background-color: #FAFAFA;
+  overflow: hidden;
 }
 
 md-content {
@@ -30,4 +74,107 @@ md-toolbar {
   height: 45px;
 }
 
-// Put your styles here
+// Child-side view
+
+#app {
+  background-color: #4fc3f7;
+  color: #fff;
+  font-family: 'proxima-nova-soft';
+  font-weight: 500;
+  height: 100vh;
+  overflow: hidden;
+
+  a {
+    color: inherit;
+  }
+
+  #time {
+    background-color: #263238;
+    border-bottom: darken(#263238, 2%);
+    padding: 5px 0;
+    text-align: right;
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+
+    span {
+      margin-right: 5px;
+    }
+  }
+
+  .alt {
+    background-color: darken(#4fc3f7, 3%);
+    border-right: 1px solid darken(#4fc3f7, 7%);
+  }
+
+  .column {
+    width: 25%;
+    display: inline-block;
+    margin-right: -4px;
+    height: 96vh;
+    margin-top: 4vh;
+    overflow-y: scroll;
+    overflow-x: hidden;
+
+    .chores {
+      -webkit-overflow-scrolling: touch;
+      overflow-y: scroll;
+      height: 96vh;
+    }
+
+    header {
+      background-color: #F06292;
+      margin-bottom: 10px;
+      padding: 10px;
+      padding-left: 25px;
+      font-size: 1.4em;
+      position: fixed;
+      width: 22.3vw;
+      display: block;
+      z-index: 999;
+      transition: all 0.1s ease-in-out;
+      box-shadow: 0 4px 8px -4px rgba(0,0,0,0.48);
+
+      &.shrink {
+        img {
+          height: 32px;
+        }
+      }
+
+      &.pink {
+        background-color: #F06292;
+      }
+
+      &.green {
+        background-color: #64FFDA;
+      }
+
+      &.purple {
+        background-color: #BA68C8;
+      }
+
+      &.orange {
+        background-color: #FFB74D;
+      }
+    }
+
+    header > img {
+      border-radius: 50%;
+      vertical-align: middle;
+      margin-right: 10px;
+      height: 64px;
+      background-color: #fff;
+      transition: all 0.1s ease-in-out;
+
+      .BoxShadowHelper(@level: 1);
+    }
+
+    header > .meta {
+      display: inline-block;
+    }
+
+    sc-chore:first-of-type .chore {
+      margin-top: 115px;
+    }
+  }
+}

@@ -1,0 +1,114 @@
+.BoxShadowHelper(@level: 1) {
+  & when (@level = 1) {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  & when (@level = 2) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  & when (@level = 3) {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  & when (@level = 4) {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  & when (@level = 5) {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+}
+
+#choreDetail {
+  background-color: #4fc3f7;
+  color: #fff;
+  font-family: 'proxima-nova-soft';
+  font-weight: 500;
+  height: 100vh;
+
+  .choreName {
+    font-size: 2em;
+    padding-top: 100px;
+    margin-bottom: 100px;
+
+    span {
+      font-size: 1.4em;
+    }
+  }
+
+  .details {
+    background-color: #fff;
+    padding: 50px;
+    border-radius: 8px;
+    margin-bottom: 100px;
+    color: rgba(0,0,0,0.8);
+    text-align: center;
+    font-size: 2em;
+    .BoxShadowHelper(@level: 1);
+  }
+
+  .wrapper {
+    max-width: 50%;
+    margin: 0 auto;
+  }
+
+  .points {
+    background-color: transparent;
+    border-radius: 50%;
+    background-image: url("/images/choreIcons/Points.svg");
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: rgba(0,0,0,0.8);
+    float: right;
+    margin-top: -30px;
+    font-weight: 700;
+    .BoxShadowHelper(@level: 2);
+  }
+
+  .buttons {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  a {
+    text-decoration: none;
+    margin-right: 50px;
+  }
+
+  .button {
+    background-color: #fff;
+    display: inline-block;
+    width: 40%;
+    margin-right: 50px;
+    text-align: center;
+    padding: 50px 0;
+    border-radius: 2px;
+    transition: all .1s ease-in-out;
+
+    .BoxShadowHelper(@level: 2);
+
+    &:focus,
+    &:active,
+    &:hover {
+      background-color: #ECEFF1 !important;
+      color: rgba(0,0,0,0.6);
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    md-icon {
+      font-size: 2em;
+      width: auto;
+      height: auto;
+    }
+  }
+
+  .ok md-icon {
+    color: #4CAF50;
+  }
+
+  .nope md-icon {
+    color: #f44336;
+  }
+}
