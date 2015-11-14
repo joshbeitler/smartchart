@@ -55,7 +55,7 @@
     });
 
     $stateProvider.state('storeState', {
-      url: "/app/store",
+      url: "/app/store/{id}",
       templateUrl: "/views/store.ejs"
     });
 

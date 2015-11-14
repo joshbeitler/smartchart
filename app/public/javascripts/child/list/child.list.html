@@ -1,6 +1,6 @@
 <span ng-repeat="child in data.children">
   <div class="column"> <!-- todo: alt -->
-    <a ui-sref="storeState">
+    <a ui-sref="storeState({id: child.id})">
       <header data-size="big" ng-style="{'background-color':child.color}">
         <img ng-src="{{child.picture}}" alt="" />
         <div class="meta">

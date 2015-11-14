@@ -36,7 +36,7 @@
       '#BBDEFB',
       '#F8BBD0',
       '#B2EBF2',
-      '#F0F4C3',
+      '#DCE775',
       '#C8E6C9',
       '#E1BEE7',
       'FFCCBC'
