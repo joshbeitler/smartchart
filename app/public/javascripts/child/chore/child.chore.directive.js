@@ -21,7 +21,18 @@
     // This needs to be done with a constant
     var ref = new Firebase('https://cranium.firebaseio.com/');
     var chore = this;
-    chore.id = $attrs.id;
+
+    $scope.$watch(function() {
+      return [$attrs.cname, $attrs.icon, $attrs.points, $attrs.cid];
+    }, function() {
+      chore.icon = $attrs.icon;
+      chore.cname = $attrs.cname;
+      chore.points = $attrs.points;
+      chore.cid = $attrs.cid;
+    }, true);
+
+
+    console.log($attrs);
 
     var colors = [
       '#B2DFDB',
