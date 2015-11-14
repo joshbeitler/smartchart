@@ -26,7 +26,7 @@
   .user {
     background-color: #F06292;
     font-size: 1.5em;
-    padding: 50px;
+    padding: 20px 50px !important;
     .BoxShadowHelper(@level: 2);
 
     a {
@@ -43,14 +43,16 @@
     }
 
     .points {
+      margin-right: -26px;
+      width: 300px;
+      font-size: 2.5em;
       float: right;
-      width: 200px;
       text-align: right;
       font-weight: 700;
 
       img {
         display: inline;
-        width: 48px;
+        width: 96px;
         margin-bottom: -15px;
         margin-right: 5px;
         .BoxShadowHelper(@level: 1);
@@ -59,19 +61,25 @@
     }
 
     .profile img {
+      margin-left: 80px;
       border-radius: 50%;
       vertical-align: middle;
       margin-right: 25px;
-      height: 64px;
-      width: 64px;
+      height: 200px;
+      width: 200px;
       background-color: #fff;
 
       .BoxShadowHelper(@level: 1);
     }
+
+    .profile span {
+      font-size: 4em;
+    }
+
   }
 
   #storeContent {
-    padding: 50px;
+    padding: 20px 50px;
     padding-top: 100px;
     text-align: center;
     margin: 0 auto;
