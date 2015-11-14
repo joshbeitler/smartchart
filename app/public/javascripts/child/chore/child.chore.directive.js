@@ -29,6 +29,8 @@
       chore.cname = $attrs.cname;
       chore.points = $attrs.points;
       chore.cid = $attrs.cid;
+
+      console.log($attrs);
     }, true);
 
     var colors = [

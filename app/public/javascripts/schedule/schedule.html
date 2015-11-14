@@ -1,10 +1,35 @@
-<div ng-repeat="chore in schedule.chores">
-  {{chore.name}}
+<div layout="row" id="schedule">
+  <md-content class="md-whiteframe-1dp md-whiteframe" flex="20">
+
+  <md-button class="md-primary md-raised" ng-click="schedule.showCreate($event)">
+    <md-icon>add</md-icon> Create Chore
+  </md-button>
+
+  <md-button class="md-primary md-raised" ng-click="schedule.showCreate($event)">
+    <md-icon>add</md-icon> Create Reward
+  </md-button>
+
+  </md-content>
+  <md-content class="md-whiteframe-1dp md-whiteframe" flex="80" layout="row">
+    <div ng-repeat="child in schedule.children" class="day" ng-attr-id="{{'day-' + $index}}">
+      <div class="title">
+        {{child.name}}
+      </div>
+      <md-menu>
+        <md-button class="add" ng-click="$mdOpenMenu($event)">
+          <md-icon>add_square</md-icon> Add
+        </md-button>
+        <md-menu-content>
+          <div ng-repeat="chore in schedule.chores">
+            <md-menu-item>
+              <md-button ng-click="schedule.add(chore.id, $parent.$index)">{{chore.name}}</md-button>
+            </md-menu-item>
+          </div>
+        </md-menu-content>
+      </md-menu>
+      <div ng-repeat="assigned in child.assigned">
+        <div class="choreDrag">{{schedule.getChoreName(assigned.choreId)}}</div>
+      </div>
+    </div>
+  </md-content>
 </div>
-<input type="text" ng-model="choreName" placeholder="Name">
-<br><br>
-<input type="text" ng-model="choreDesc" placeholder="Chore Description">
-<br><br>
-<input type="number" ng-model="chorePoints" placeholder="Points">
-<br><br>
-<button ng-click="schedule.addChore()">Add</button>

@@ -1,0 +1,31 @@
+<md-dialog ng-cloak>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <h2>Add new chore</h2>
+      <span flex></span>
+      <md-button class="md-icon-button" ng-click="schedule.close()">
+        <md-icon aria-label="Close dialog">
+          close
+        </md-icon>
+      </md-button>
+    </div>
+  </md-toolbar>
+  <md-content class="md-whiteframe-1dp md-whiteframe" flex=66>
+    <md-input-container flex>
+      <label>Name</label>
+      <input type="text" ng-model="choreName" placeholder="Name">
+    </md-input-container>
+
+    <md-input-container flex>
+      <label>Description</label>
+      <input type="text" ng-model="choreDesc" placeholder="Chore Description">
+    </md-input-container>
+
+    <md-input-container flex>
+      <label>Points</label>
+      <input type="number" ng-model="chorePoints" placeholder="Points">
+    </md-input-container>
+
+    <md-button flex ng-click="schedule.addChore(); cancel()">Add</md-button>
+  </md-content>
+</md-dialog>
