@@ -6,6 +6,7 @@
       'child.chore',
       'child.reward',
       'child.list',
-      'child.detail'
+      'child.detail',
+      'child.store'
     ])
 })();

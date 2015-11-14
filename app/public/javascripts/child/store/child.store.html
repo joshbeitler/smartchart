@@ -1,0 +1,26 @@
+<div id="storePage" class="anim-slide-below-fade">
+  <div class="user" ng-style="{'background-color':data.color}">
+    <span class="profile">
+      <a ui-sref="appState">
+        <md-icon>arrow_back</md-icon>
+      </a>
+      <img src="{{data.picture}}" alt="" />
+      {{data.name}}
+    </span>
+    <span class="points">
+      <img src="/images/choreIcons/Points.svg" alt="" />
+      {{data.points}}
+    </span>
+  </div>
+  <div id="storeContent">
+    <sc-reward></sc-reward>
+    <sc-reward></sc-reward>
+    <sc-reward></sc-reward>
+    <sc-reward></sc-reward>
+
+    <sc-reward></sc-reward>
+    <sc-reward></sc-reward>
+    <sc-reward></sc-reward>
+    <sc-reward></sc-reward>
+  </div>
+</div>
