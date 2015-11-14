@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 510 510" style="enable-background:new 0 0 510 510;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#1E1F28;}
+	.st1{fill:#2E2F3D;}
+	.st2{fill:#09090C;}
+	.st3{fill:#1D1E28;}
+	.st4{fill:#E8D9BA;}
+	.st5{fill:#FFF4D7;}
+	.st6{fill:#8EE2E8;}
+	.st7{fill:#AEF5FF;}
+	.st8{fill:#C5E9EA;}
+	.st9{fill:#D9FCFF;}
+</style>
+<g>
+	<g>
+		<rect x="255" y="408" class="st0" width="18" height="16"/>
+		<polygon class="st1" points="255,424 255,434 329,434 329,424 273.6,424 273.6,424 		"/>
+		<rect x="254.6" y="424" class="st1" width="19" height="0"/>
+		<rect x="237" y="408" class="st2" width="18" height="16"/>
+		<polygon class="st3" points="236.7,424 236.7,424 181,424 181,434 255,434 255,424 		"/>
+		<rect x="236.7" y="424" class="st1" width="18" height="0"/>
+	</g>
+	<rect x="360.2" y="416" class="st4" width="49" height="18.3"/>
+	<rect x="409.2" y="416" class="st5" width="49" height="18.3"/>
+	<rect y="75.6" class="st3" width="255" height="332.2"/>
+	<rect x="255" y="75.6" class="st1" width="255" height="332.2"/>
+	<polygon class="st6" points="10,111.1 10,398 255,398 255,355.6 	"/>
+	<polygon class="st6" points="255,86 247.4,86 255,93.4 	"/>
+	<polygon class="st7" points="255,398 297,398 255,355.6 	"/>
+	<polygon class="st7" points="501,86 306.5,86 501,279.9 	"/>
+	<polygon class="st7" points="276.3,86 255,86 255,93.4 501,339 501,310.2 	"/>
+	<polygon class="st8" points="255,93.4 247.4,86 10,86 10,111.1 255,355.6 	"/>
+	<polygon class="st9" points="255,355.6 297,398 501,398 501,339 255,93.4 	"/>
+	<polygon class="st9" points="501,279.9 306.5,86 276.3,86 501,310.2 	"/>
+</g>
+</svg>
