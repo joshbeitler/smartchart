@@ -23,15 +23,18 @@
     var chore = this;
 
     $scope.$watch(function() {
-      return [$attrs.cname, $attrs.icon, $attrs.points, $attrs.cid];
+      return [$attrs.cname, $attrs.icon, $attrs.points, $attrs.cid,
+        $attrs.uid
+      ];
     }, function() {
       chore.icon = $attrs.icon;
       chore.cname = $attrs.cname;
       chore.points = $attrs.points;
       chore.cid = $attrs.cid;
-
-      console.log($attrs);
+      chore.uid = $attrs.uid;
     }, true);
+
+    chore.uid = $attrs.uid;
 
     var colors = [
       '#B2DFDB',

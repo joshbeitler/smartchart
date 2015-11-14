@@ -5,7 +5,7 @@
         <img ng-src="{{child.picture}}" alt="" />
         <div class="meta">
           {{child.name}}<br>
-          <span>300pts</span>
+          <span>{{child.points}} points</span>
         </div>
       </header>
     </a>
@@ -17,7 +17,8 @@
             icon="{{list.getIcon(assigned.choreId)}}"
             cid="{{list.getCid(assigned.choreId)}}"
             cname="{{list.getName(assigned.choreId)}}"
-            points="{{list.getPoints(assigned.choreId)}}"></sc-chore>
+            points="{{list.getPoints(assigned.choreId)}}"
+            uid="{{child.id}}"></sc-chore>
         <!-- </span> -->
       </span>
     </div>
