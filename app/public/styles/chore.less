@@ -52,21 +52,30 @@ sc-chore {
   }
 
   .caption {
-    margin-top: 10px;
+    text-align: left;
+    .BoxShadowHelper(@level: 2);
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    height: 55px;
+    background-color: white;
+    padding-left: 60px;
+    margin-left: 40px;
+    color: rgba(0, 0, 0, .6);
+    margin-top: 0px;
     font-size: 1.4em;
   }
 
   .points {
     color: rgba(0,0,0,.6);
-    width: 60px;
-    height: 60px;
+    width: 90px;
+    height: 90px;
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.8em;
     border-radius: 50%;
     text-align: center;
-    line-height: 60px;
+    line-height: 90px;
     position: absolute;
-    right: 15px;
+    left: 0px;
     bottom: 0;
     background-image: url('/images/choreIcons/Points.svg');
 
