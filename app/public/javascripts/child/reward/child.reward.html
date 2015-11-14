@@ -1,11 +1,11 @@
-<a ui-sref="rewardState({id: 0})">
+<a ui-sref="rewardState({id: reward.rid})">
   <div class="reward">
-    <img src="/images/rewardIcons/food.svg" alt="">
+    <img ng-src="{{reward.icon}}" alt="">
     <div class="caption">
-      Food
+      {{reward.name}}
     </div>
     <div class="points">
-      -30
+      -{{reward.points}}
     </div>
   </div>
 </a>

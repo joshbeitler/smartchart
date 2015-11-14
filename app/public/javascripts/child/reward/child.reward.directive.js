@@ -33,6 +33,17 @@
       'FFCCBC'
     ];
 
+    console.log($attrs);
+
+    $scope.$watch(function() {
+      return [$attrs.name, $attrs.icon, $attrs.points, $attrs.rid];
+    }, function() {
+      reward.icon = $attrs.icon;
+      reward.name = $attrs.name;
+      reward.points = $attrs.points;
+      reward.rid = $attrs.rid;
+    }, true);
+
     $(document).ready(function() {
       $.map($('.reward'), function(i) {
         $(i).height($(i).width());

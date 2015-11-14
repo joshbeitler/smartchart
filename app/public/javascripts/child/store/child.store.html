@@ -13,14 +13,12 @@
     </span>
   </div>
   <div id="storeContent">
-    <sc-reward></sc-reward>
-    <sc-reward></sc-reward>
-    <sc-reward></sc-reward>
-    <sc-reward></sc-reward>
-
-    <sc-reward></sc-reward>
-    <sc-reward></sc-reward>
-    <sc-reward></sc-reward>
-    <sc-reward></sc-reward>
+    <span ng-repeat="reward in store.rewards">
+      <sc-reward
+        icon="{{store.rewards[$index].icon}}"
+        name="{{store.rewards[$index].name}}"
+        points="{{store.rewards[$index].points}}"
+        rid="{{store.rewards[$index].id}}"></sc-reward>
+    </span>
   </div>
 </div>
