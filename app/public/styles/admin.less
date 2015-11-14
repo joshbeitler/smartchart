@@ -1,3 +1,21 @@
+.BoxShadowHelper(@level: 1) {
+  & when (@level = 1) {
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  }
+  & when (@level = 2) {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+  & when (@level = 3) {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+  }
+  & when (@level = 4) {
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  }
+  & when (@level = 5) {
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+}
+
 .choreDrag {
   background-color: #2196F3;
   padding: 15px;
@@ -8,9 +26,82 @@
   display: block;
   width: 70%;
   user-select: none !important;
+  .BoxShadowHelper(@level: 1);
+}
+
+.h {
+  position: relative;
+  .big-date {
+    position: absolute;
+    color: #fff;
+    font-size: 3em;
+    right: 24px;
+    bottom: 80px;
+  }
+}
+
+.bs {
+  display: block;
+  color: rgba(0,0,0,0.4);
+  width: 100%;
+}
+
+.pic {
+  width: 100%;
+  height: 300px;
+  .BoxShadowHelper(@level: 1);
+}
+
+.er {
+  position: absolute;
+  bottom: 400px;
+  left: 0;
+  width: 95%;
+  text-align: center;
+  margin: 0 auto;
+  display: block;
 }
 
 #schedule {
+  .m {
+    height: 100vh;
+    position: relative;
+    margin-top: -40px;
+  }
+
+  .adds {
+    margin-bottom: 25px;
+    margin-top: 25px;
+    display: block;
+  }
+
+.scrub2 {
+  text-align: center;
+  margin: 0 auto;
+  display: block;
+  position: relative;
+  bottom: 35px;
+  left: -70px;
+
+
+.md-button.md-primary.md-fab{
+background-color: #F06292 !important;
+}
+
+  md-button {
+    display: inline-block;
+background-color: #F06292 !important;
+  }
+}
+
+.month {
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.3);
+  font-weight: bold;
+  margin-bottom: -15px;
+  display: block;
+}
+
   height: 100%;
 
   md-tabs {
@@ -20,12 +111,14 @@
   .day {
     border-right: 2px solid rgba(0,0,0,0.1);
     border-left: 2px solid rgba(0,0,0,0.1);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
     width: 25%;
     margin-right: 5px;
 
     .title {
-      background-color: #2196F3;
-      border: 1px solid darken(#2196F3, 2%);
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
       color: #fff;
       padding: 15px;
       margin-bottom: 15px;
@@ -37,12 +130,12 @@
     }
   }
 
-  .md-fab {
-    margin: 0 auto;
-    display: block;
-    margin-top: 25px;
-    margin-bottom: 10px;
-  }
+  // .md-fab {
+  //   margin: 0 auto;
+  //   display: block;
+  //   margin-top: 25px;
+  //   margin-bottom: 10px;
+  // }
 
   md-tabs > md-tabs-wrapper > md-tabs-canvas > md-pagination-wrapper > md-tab-item:not([disabled]).md-active {
     color: rgba(0,0,0,.8);
@@ -54,10 +147,10 @@
 }
 
 .scrub {
-  md-icon {
-    width: 50px;
-    height: auto;
-  }
+  // md-icon {
+  //   width: 50px;
+  //   height: auto;
+  // }
 }
 
 .gu-mirror {
