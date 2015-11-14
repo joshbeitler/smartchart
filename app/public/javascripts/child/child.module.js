@@ -7,6 +7,7 @@
       'child.reward',
       'child.list',
       'child.detail',
-      'child.store'
+      'child.store',
+      'child.prize'
     ])
 })();

@@ -52,9 +52,9 @@
       </md-button>
       <span><a ui-sref="homeState">Smartchart</a></span>
       <span flex></span>
-      <md-button class="md-icon-button" ng-show="vm.authed">
+      <a ui-sref="scheduleState"><md-button class="md-icon-button" ng-show="vm.authed">
         <md-icon>event</md-icon>
-      </md-button>
+      </md-button></a>
       <sp-notifications ng-show="vm.authed"></sp-notifications>
       <sp-google ng-hide="true"></sp-google>
       <div class="googleButton" id="googleLogout" ng-show="vm.authed">

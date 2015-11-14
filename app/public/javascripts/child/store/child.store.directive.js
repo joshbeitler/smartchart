@@ -16,19 +16,23 @@
     '$scope',
     '$state',
     '$firebaseObject',
-    '$location'
+    '$location',
+    '$firebaseArray'
   ];
 
   function StoreController($attrs, $timeout, $scope, $state, $firebaseObject,
-    $location) {
+    $location, $firebaseArray) {
     var id = $location.path().split('/')[3]; // string black magic
 
     var ref = new Firebase('https://cranium.firebaseio.com');
     var user = ref.getAuth();
-    var dataRef = ref.child('112496459354292613741').child('children').child(
+    var dataRef = ref.child('112496459354292613741');
+    var childRef = dataRef.child('children').child(
       id);
-    var data = $firebaseObject(dataRef);
-
+    var data = $firebaseObject(childRef);
     data.$bindTo($scope, "data");
+
+    var store = this;
+    store.rewards = $firebaseArray(dataRef.child('rewards'));;
   }
 })();
