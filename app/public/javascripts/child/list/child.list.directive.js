@@ -15,13 +15,52 @@
     '$timeout',
     '$scope',
     '$state',
-    '$firebaseObject'
+    '$firebaseObject',
+    '$firebaseArray'
   ];
 
-  function ListController($attrs, $timeout, $scope, $state, $firebaseObject) {
+  function ListController($attrs, $timeout, $scope, $state, $firebaseObject,
+    $firebaseArray) {
     var ref = new Firebase('https://cranium.firebaseio.com');
     var user = ref.getAuth();
     var dataRef = ref.child('112496459354292613741');
+    var iconRef = dataRef.child('chores');
+
+    var list = this;
+    list.d = $firebaseArray(iconRef);
+    console.log(list.d);
+
+    list.getIcon = function(rawId) {
+      for (var chore in list.d) {
+        if (list.d[chore].id === rawId) {
+          return list.d[chore].icon;
+        }
+      }
+    }
+
+    list.getCid = function(rawId) {
+      for (var chore in list.d) {
+        if (list.d[chore].id === rawId) {
+          return list.d[chore].$id;
+        }
+      }
+    }
+
+    list.getName = function(rawId) {
+      for (var chore in list.d) {
+        if (list.d[chore].id === rawId) {
+          return list.d[chore].name;
+        }
+      }
+    }
+
+    list.getPoints = function(rawId) {
+      for (var chore in list.d) {
+        if (list.d[chore].id === rawId) {
+          return list.d[chore].points;
+        }
+      }
+    }
 
     // dataRef.child('chores').set([{
     //   'icon': '/images/choreIcons/Trash.svg',
@@ -56,8 +95,6 @@
     // }]);
 
     var data = $firebaseObject(dataRef);
-
-    console.log(data);
 
     data.$bindTo($scope, "data");
   }

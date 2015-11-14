@@ -28,7 +28,9 @@
     var dataRef = ref.child('112496459354292613741').child('chores').child(id);
     var data = $firebaseObject(dataRef);
 
-    console.log(data);
+    function completeJob(uid, cid, assn) {
+      console.log(uid, cid, assn);
+    }
 
     data.$bindTo($scope, "data");
   }
