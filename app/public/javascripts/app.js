@@ -17,6 +17,7 @@
     'dash',
     'schedule',
     'editStore',
+    'addChildren'
   ]).config(function($mdThemingProvider, $locationProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
@@ -124,6 +125,16 @@
     $stateProvider.state('scheduleState', {
       url: '/edit/schedule',
       templateUrl: '/views/editSchedule.ejs',
+    })
+
+    $stateProvider.state('onboarding', {
+      url: '/onboarding',
+      templateUrl: '/views/onboarding.ejs'
+    })
+
+    $stateProvider.state('addChildren', {
+      url: '/onboarding/children/add',
+      templateUrl: '/views/addChildren.ejs'
     })
 
     $urlRouterProvider.otherwise('/auth/login');

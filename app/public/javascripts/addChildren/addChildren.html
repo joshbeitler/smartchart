@@ -1,0 +1,10 @@
+<input type="text" ng-model="vm.childName" placeholder="Name">
+<br><br>
+<button ng-hide="vm.ready" ng-click="vm.addChild()">Add Child</button>
+<button ng-show="vm.ready" ng-click="vm.addChild()">Add Another Child</button>
+<br><br>
+<a ui-sref="loginState"><button ng-show="vm.ready">Continue to Dashboard</button></a>
+<p>Current Children</p>
+<div ng-repeat="child in vm.children">
+  {{child.name}}
+</div>

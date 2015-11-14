@@ -22,7 +22,7 @@
 
   function GoogleController($attrs, $timeout, $scope, $state, $mdToast) {
     // This needs to be done with a constant
-    var ref = new Firebase('https://cranium.firebaseio.com/');
+    var ref = new Firebase('https://cranium.firebaseio.com');
 
     var vm = this;
     vm.google = {};
@@ -35,7 +35,6 @@
         if (!err) {
           $mdToast.show($mdToast.simple().content(
             'Successfully logged in'));
-          $state.go('homeState');
         }
       });
     }
@@ -51,10 +50,16 @@
         $timeout(function() {
           vm.user = authData;
           vm.authed = true;
-        })
-      }
+          ref.child(vm.user.google.id).once('value', function(ss){
+            if (ss.val() !== null) {
+              $state.go('homeState');
+            } else {
+              $state.go('onboarding')
+            }
+          });
+        })    
+      };
     }
-
     ref.onAuth(onAuthCallback);
   }
 })();
