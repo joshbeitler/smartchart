@@ -14,7 +14,9 @@
     'notifications',
     'auth',
     'child',
-    'dash'
+    'dash',
+    'schedule',
+    'editStore',
   ]).config(function($mdThemingProvider, $locationProvider) {
     $mdThemingProvider.theme('default')
       .primaryPalette('blue')
@@ -76,6 +78,16 @@
         });
       }
     });
+
+    $stateProvider.state('editStoreState', {
+      url: '/edit/store',
+      templateUrl: "/views/editStore.ejs"
+    })
+
+    $stateProvider.state('scheduleState', {
+      url: '/edit/schedule',
+      templateUrl: '/views/editSchedule.ejs',
+    })
 
     $urlRouterProvider.otherwise('/auth/login');
   });
