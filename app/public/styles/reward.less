@@ -24,8 +24,7 @@ sc-reward {
 }
 
 .reward {
-  display: inline-block;
-  width: 18%;
+  width: 25%;
   margin: 0 auto;
   border-radius: 50%;
   background-color: #CDDC39;
@@ -34,10 +33,11 @@ sc-reward {
   font-family: 'proxima-nova-soft';
   font-weight: 500;
   position: relative;
-  margin-right: 25px;
-  margin-left: 25px;
+  margin-right: 10px;
+  margin-top: 25px;
   margin-bottom: 25px;
   transition: all .1s ease-in-out;
+  display: inline-block;
 
   &:focus,
   &:active,
@@ -50,42 +50,48 @@ sc-reward {
 
   img {
     z-index: 1;
-    width: 75%;
+    width: 80%;
     margin-top: 10%;
   }
 
-  .caption {;
-    margin-right: 15px;
-    padding-top: 0px;
+
+  .caption {
+    margin-right: 10px;
+    padding-top: 20px;
     box-sizing: border-box;
-    padding-right: 0px;
+    padding-right: 20px;
     display: inline-block;
     z-index: 5;
-    text-align: right;
+    text-align: left;
+    margin-top: -48px;
     .BoxShadowHelper(@level: 2);
-    border-top-right- radius: 50px;
+    border-top-right-radius: 50px;
     border-bottom-right-radius: 50px;
-    height: 50px;
+    height: 65px;
     background-color: white;
-    padding-left: 0px;
-    margin-left: 20px;
+    padding-left: 58px;
+    margin-left: 40px;
     color: rgba(0, 0, 0, .6);
     font-size: 1.4em;
-    margin-top: 0px;
+    span {
+      margin-top: 50px;
+    }
   }
+
+
 
   .points {
     z-index: 10;
     color: rgba(0,0,0,.6);
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     font-weight: 700;
-    font-size: 1.4em;
+    font-size: 1.8em;
     border-radius: 50%;
     text-align: center;
-    line-height: 60px;
+    line-height: 80px;
     position: absolute;
-    left: 5px;
+    left: 10px;
     bottom: 0;
     background-image: url('/images/choreIcons/Points.svg');
 
