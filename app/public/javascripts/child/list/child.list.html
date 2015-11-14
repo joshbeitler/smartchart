@@ -14,10 +14,10 @@
         <!-- {{data.chores[assigned.choreId].icon}} -->
         <!-- <span ng-repeat="chore in data.chores"> -->
           <sc-chore
-            icon="{{data.chores[assigned.choreId].icon}}"
-            cid="{{data.chores[assigned.choreId].id}}"
-            cname="{{data.chores[assigned.choreId].name}}"
-            points="{{data.chores[assigned.choreId].points}}"></sc-chore>
+            icon="{{list.getIcon(assigned.choreId)}}"
+            cid="{{list.getCid(assigned.choreId)}}"
+            cname="{{list.getName(assigned.choreId)}}"
+            points="{{list.getPoints(assigned.choreId)}}"></sc-chore>
         <!-- </span> -->
       </span>
     </div>

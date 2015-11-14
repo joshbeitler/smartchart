@@ -33,6 +33,49 @@
     schedule.children = $firebaseArray(childRef);
     schedule.getChoreName = getChoreName;
 
+    schedule.date = new Date().getUTCDate();
+    var currentDate = schedule.date;
+
+    schedule.forward = function(idx) {
+      var td = Number(currentDate + 1);
+      currentDate = td;
+      $('.date').text(td);
+      $('.choreDrag').remove();
+
+      for (var c in schedule.children) {
+        for (var d in schedule.children[c].assigned) {
+          if (schedule.children[c].assigned[d].date === td) {
+            $('#day-' + schedule.children[c].id).append(
+              '<div class="choreDrag">' + getChoreName(schedule.children[
+                  c]
+                .assigned[d]
+                .choreId) +
+              '</div>');
+          }
+        }
+      }
+    }
+
+    schedule.back = function(idx) {
+      var td = Number(currentDate - 1);
+      currentDate = td;
+      $('.date').text(td);
+      $('.choreDrag').remove();
+
+      for (var c in schedule.children) {
+        for (var d in schedule.children[c].assigned) {
+          if (schedule.children[c].assigned[d].date === td) {
+            $('#day-' + schedule.children[c].id).append(
+              '<div class="choreDrag">' + getChoreName(schedule.children[
+                  c]
+                .assigned[d]
+                .choreId) +
+              '</div>');
+          }
+        }
+      }
+    }
+
     function showCreate(ev) {
       $mdDialog.show({
           controllerAs: 'ctlr',
@@ -63,7 +106,7 @@
       var c = $firebaseArray(schedule.childRef.child(idx).child('assigned'));
       c.$add({
         choreId: choreId,
-        date: new Date().getUTCDate()
+        date: currentDate
       });
     }
 
