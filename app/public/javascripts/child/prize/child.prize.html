@@ -1,12 +1,12 @@
 <div id="rewardDetail" class="anim-slide-below-fade">
   <div class="wrapper">
     <div class="rewardName">
-      <span>{{data.name}} </span>
-      <div class="icon"></div>
-      <div class="points">30</div>
+      <span>{{data.name}}</span>
+      <div class="icon" ng-style="{'background-image':'url('+data.icon+')'}"></div>
+      <div class="points">{{data.points}}</div>
     </div>
     <div class="details">
-      Do you want to buy a toy for 30 points?
+      Do you want to buy <em>{{data.name}}</em> for {{data.points}} points?
     </div>
     <div class="buttons">
       <a ui-sref="appState">
