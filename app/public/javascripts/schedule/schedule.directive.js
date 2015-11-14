@@ -34,6 +34,13 @@
     schedule.getChoreName = getChoreName;
 
     schedule.date = new Date().getUTCDate();
+    //
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+      "July", "August", "September", "October", "November", "December"
+    ];
+
+    $('.month').text(monthNames[new Date().getMonth()]);
+
     var currentDate = schedule.date;
 
     schedule.forward = function(idx) {
@@ -100,8 +107,8 @@
     function add(choreId, idx) {
       var choreData = schedule.chores[choreId];
 
-      $('#day-' + idx).append('<div class="choreDrag">' + choreData.name +
-        '</div>');
+      // $('#day-' + idx).append('<div class="choreDrag">' + choreData.name +
+      //   '</div>');
 
       var c = $firebaseArray(schedule.childRef.child(idx).child('assigned'));
       c.$add({

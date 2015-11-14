@@ -1,34 +1,43 @@
 <div layout="row" id="schedule">
-  <md-content class="md-whiteframe-1dp md-whiteframe" flex="20">
+  <div layout="column" class="hi">
+  <div class="h">
+    <img src="http://i-cdn.phonearena.com/images/articles/145581-image/January.jpg" class="pic" alt="">
+    <span class="date big-date">{{schedule.date}}</span>
 
-    Monday <span class="date">{{schedule.date}}</span><br><br>
+    <div class="scrub2">
+      <md-button class="md-fab md-primary md-raised scrub" ng-click="schedule.back()">
+        <md-icon>arrow_back</md-icon>
+      </md-button>
 
-    <md-button class="md-primary md-raised scrub" ng-click="schedule.back()">
-      <md-icon>arrow_back</md-icon>
-    </md-button>
+      <md-button class="md-fab md-primary md-raised scrub" ng-click="schedule.forward()">
+        <md-icon>arrow_forward</md-icon>
+      </md-button>
+    </div>
+  </div>
+  <md-content class=" md-whiteframe m" flex="100">
 
-    <md-button class="md-primary md-raised scrub" ng-click="schedule.forward()">
-      <md-icon>arrow_forward</md-icon>
-    </md-button>
+    <span class="month"></span>
+    <h2>Monday <span class="date">{{schedule.date}}</span></h2>
 
-    <hr>
-
-    <md-button class="md-primary md-raised" ng-click="schedule.showCreate($event)">
+    <div class="er">
+    <md-button class=" bs md-raised" ng-click="schedule.showCreate($event)">
       <md-icon>add</md-icon> Create Chore
     </md-button>
 
-    <md-button class="md-primary md-raised" ng-click="schedule.showCreate($event)">
+    <md-button class="  bs" ng-click="schedule.showCreate($event)">
       <md-icon>add</md-icon> Create Reward
     </md-button>
+    </div>
 
   </md-content>
+</div>
   <md-content class="md-whiteframe-1dp md-whiteframe" flex="80" layout="row">
     <div ng-repeat="child in schedule.children" class="day" ng-attr-id="{{'day-' + $index}}">
-      <div class="title">
+      <div class="title" ng-style="{'background-color':child.color}">
         {{child.name}}
       </div>
       <md-menu>
-        <md-button class="add" ng-click="$mdOpenMenu($event)">
+        <md-button class="add adds" ng-click="$mdOpenMenu($event)">
           <md-icon>add_square</md-icon> Add
         </md-button>
         <md-menu-content>
