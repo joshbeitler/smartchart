@@ -10,14 +10,14 @@
     </a>
     <div class="chores">
       <span ng-repeat="assigned in child.assigned">
-        <span ng-repeat="chore in data.chores">
+        <!-- {{data.chores[assigned.choreId].icon}} -->
+        <!-- <span ng-repeat="chore in data.chores"> -->
           <sc-chore
-            icon="{{data.chores[$index].icon}}"
-            cid="{{data.chores[$index].id}}"
-            ng-if="assigned === chore.id"
-            cname="{{data.chores[$index].name}}"
-            points="{{data.chores[$index].points}}"></sc-chore>
-        </span>
+            icon="{{data.chores[assigned.choreId].icon}}"
+            cid="{{data.chores[assigned.choreId].id}}"
+            cname="{{data.chores[assigned.choreId].name}}"
+            points="{{data.chores[assigned.choreId].points}}"></sc-chore>
+        <!-- </span> -->
       </span>
     </div>
   </div>

@@ -9,6 +9,7 @@
     'ngAria',
     'anim-in-out',
     'angularRipple',
+    angularDragula(angular),
 
     // Add app-specific directives here
     'notifications',
