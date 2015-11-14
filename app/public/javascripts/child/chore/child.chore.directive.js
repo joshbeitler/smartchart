@@ -31,9 +31,6 @@
       chore.cid = $attrs.cid;
     }, true);
 
-
-    console.log($attrs);
-
     var colors = [
       '#B2DFDB',
       '#BBDEFB',
