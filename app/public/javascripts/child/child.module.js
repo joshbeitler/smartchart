@@ -5,6 +5,7 @@
     .module('child', [
       'child.chore',
       'child.reward',
-      'child.list'
+      'child.list',
+      'child.detail'
     ])
 })();
