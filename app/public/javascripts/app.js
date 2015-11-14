@@ -36,7 +36,7 @@
     });
 
     $stateProvider.state('detailState', {
-      url: "/app/chores/{id}",
+      url: "/app/chores/{id}/{uid}",
       templateUrl: "/views/choreDetail.ejs",
       controller: function($scope) {
         $scope.$on('$viewContentLoaded', function(event) {
