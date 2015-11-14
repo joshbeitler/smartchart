@@ -1,11 +1,12 @@
-<a ui-sref="detailState({id: chore.id })">
+<a ui-sref="detailState({id: chore.cid })">
   <div class="chore">
-    <img src="/images/choreIcons/washClothes.svg" alt="">
+    <img ng-src="{{chore.icon}}" alt="">
     <div class="caption">
-      Laundry
+      <!-- Laundry -->
+      {{chore.cname}}
     </div>
     <div class="points">
-      +30
+      +{{chore.points}}
     </div>
   </div>
 </a>

@@ -1,0 +1,22 @@
+<span ng-repeat="child in data.children">
+  <div class="column"> <!-- todo: alt -->
+    <header data-size="big" ng-style="{'background-color':child.color}">
+      <img ng-src="{{child.picture}}" alt="" />
+      <div class="meta">
+        {{child.name}}
+      </div>
+    </header>
+    <div class="chores">
+      <span ng-repeat="assigned in child.assigned">
+        <span ng-repeat="chore in data.chores">
+          <sc-chore
+            icon="{{data.chores[$index].icon}}"
+            cid="{{data.chores[$index].id}}"
+            ng-if="assigned === chore.id"
+            cname="{{data.chores[$index].name}}"
+            points="{{data.chores[$index].points}}"></sc-chore>
+        </span>
+      </span>
+    </div>
+  </div>
+</span>

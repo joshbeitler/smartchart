@@ -4,6 +4,7 @@
   angular
     .module('child', [
       'child.chore',
-      'child.reward'
+      'child.reward',
+      'child.list'
     ])
 })();
